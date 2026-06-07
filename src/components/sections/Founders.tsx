@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { lpCopy, lpFounders } from "@/constants/lp-data";
+import { lpCopy, lpFounders, lpKTP } from "@/constants/lp-data";
 import { revealOnScroll } from "@/lib/gsap";
 import { QuantumPanel } from "@/components/ui/quantum-panel";
 
@@ -43,7 +43,7 @@ export function Founders() {
             <div className="mt-4 text-sm leading-7 opacity-75">{f.bio}</div>
             <div className="mt-8 h-px w-full bg-black/10" />
             <div className="mt-4 text-xs opacity-55">
-              “現代の寺院”は、科学と安全を土台に成り立つ。
+              {lpKTP.conceptTitle}
             </div>
           </QuantumPanel>
         ))}

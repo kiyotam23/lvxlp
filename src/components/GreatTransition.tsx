@@ -34,6 +34,7 @@ export function GreatTransition({
     const trigger = document.getElementById(triggerId);
     const plan04 = document.querySelector(plan04Selector);
     const orb = document.querySelector("[data-transition-orb]");
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (!target || !bg || !trigger) return;
 
@@ -60,8 +61,9 @@ export function GreatTransition({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger,
-        start: "top top",
-        end: "+=160%",
+        // Mobile: start earlier and require less scroll to reduce friction.
+        start: isMobile ? "top 75%" : "top top",
+        end: isMobile ? "+=95%" : "+=160%",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -70,15 +72,15 @@ export function GreatTransition({
 
     // Falling orb → bounce → expand to white (single-shape transition).
     if (orb) {
-      gsap.set(orb, { y: -320, scale: 0, autoAlpha: 1, transformOrigin: "50% 50%" });
+      // Start slightly lower to avoid top-edge clipping on first appearance.
+      gsap.set(orb, { y: -220, scale: 0, autoAlpha: 1, transformOrigin: "50% 50%" });
 
-      // Grow in, then fall with acceleration.
-      tl.to(orb, { scale: 1, duration: 0.16, ease: "power2.out" }, 0.02)
-        .to(
-          orb,
-          { y: 0, duration: 0.55, ease: "power3.in" },
-          0.12,
-        )
+      // Single continuous descent + scale-in (no mid-stop feeling).
+      tl.to(
+        orb,
+        { y: 0, scale: 1, duration: 0.55, ease: "power3.out" },
+        0.02,
+      )
         // Impact squash.
         .to(
           orb,

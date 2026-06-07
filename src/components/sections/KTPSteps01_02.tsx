@@ -25,7 +25,7 @@ export function KTPSteps01_02() {
           プログラムの3ステップ
         </h2>
         <p data-reveal className="max-w-3xl opacity-70">
-          KTPは、体験を「終わらせない」ために、段階的に意識のOSを書き換えます。
+          {lpKTP.stepsIntro}
         </p>
       </div>
 

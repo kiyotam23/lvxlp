@@ -46,9 +46,6 @@ export function ScreeningCTA() {
             >
               {lpScreening.buttonLabel}
             </a>
-            <div className="text-xs opacity-55">
-              適応性評価 → 医師確認 → 予約（将来実装）
-            </div>
           </div>
         </div>
       </QuantumPanel>

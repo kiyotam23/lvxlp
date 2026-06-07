@@ -46,22 +46,19 @@ export function QuantumPanel({
         }}
       />
 
-      {/* Neural/prism wireframe */}
+      {/* LVX "光" motif: one-point rays, no downward vertical line */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-20"
+        className="pointer-events-none absolute inset-0 opacity-26"
         style={{
-          backgroundImage: `
-            repeating-linear-gradient(0deg, rgba(${isDark ? "255,255,255,0.18" : "0,0,0,0.22"}) 0 1px, transparent 1px 16px),
-            repeating-linear-gradient(90deg, rgba(${isDark ? "255,255,255,0.14" : "0,0,0,0.18"}) 0 1px, transparent 1px 18px),
-            repeating-linear-gradient(45deg, rgba(${isDark ? "255,255,255,0.12" : "0,0,0,0.16"}) 0 1px, transparent 1px 22px),
-            repeating-linear-gradient(-45deg, rgba(${isDark ? "255,255,255,0.10" : "0,0,0,0.14"}) 0 1px, transparent 1px 22px),
-            radial-gradient(circle at 50% 40%, rgba(${isDark ? "255,255,255,0.14" : "0,0,0,0.22"}), transparent 55%)
-          `,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700'%3E%3Cg stroke='${isDark ? "%23ffffff" : "%23000000"}' stroke-opacity='${isDark ? "0.34" : "0.28"}' stroke-width='1.2' stroke-linecap='round'%3E%3Cline x1='320' y1='170' x2='320' y2='36'/%3E%3Cline x1='320' y1='170' x2='430' y2='60'/%3E%3Cline x1='320' y1='170' x2='700' y2='170'/%3E%3Cline x1='320' y1='170' x2='640' y2='490'/%3E%3Cline x1='320' y1='170' x2='210' y2='280'/%3E%3Cline x1='320' y1='170' x2='120' y2='170'/%3E%3Cline x1='320' y1='170' x2='220' y2='70'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "68% auto",
+          backgroundPosition: "-10% -12%",
           WebkitMaskImage:
-            "radial-gradient(closest-side at 50% 45%, black 60%, transparent 100%)",
+            "radial-gradient(500px circle at 18% 18%, black 52%, transparent 100%)",
           maskImage:
-            "radial-gradient(closest-side at 50% 45%, black 60%, transparent 100%)",
+            "radial-gradient(500px circle at 18% 18%, black 52%, transparent 100%)",
         }}
       />
 

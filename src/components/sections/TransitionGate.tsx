@@ -5,18 +5,9 @@ export function TransitionGate() {
     <section
       id="transition"
       aria-label="Transition"
-      className="relative w-full py-24 md:py-32"
+      className="relative w-full py-10 md:py-32"
     >
-      <div className="relative h-[520px] overflow-hidden">
-          {/* abyss haze */}
-          <div
-            className="pointer-events-none absolute -inset-24 opacity-70"
-            style={{
-              background:
-                "radial-gradient(520px circle at 50% 45%, rgba(255,255,255,0.08), transparent 62%), radial-gradient(700px circle at 40% 60%, rgba(255,255,255,0.04), transparent 65%)",
-              filter: "blur(10px)",
-            }}
-          />
+      <div className="relative h-[360px] overflow-hidden md:h-[520px]">
 
           {/* falling orb (the only shape) */}
           <div
