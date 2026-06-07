@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { lpCopy, lpMotionText } from "@/constants/lp-data";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { BudouxText } from "@/components/ui/budoux-text";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -88,7 +89,7 @@ export function Hero() {
             </div>
 
             <h1 className="text-balance text-4xl font-semibold leading-tight text-white md:text-6xl">
-              {lpCopy.hero.headline}
+              <BudouxText as="span" text={lpCopy.hero.headline} />
             </h1>
 
             <p className="max-w-2xl text-pretty text-base leading-7 text-white/75 md:text-lg">
